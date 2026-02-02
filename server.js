@@ -131,6 +131,15 @@ app.post('/api/unsubscribe', (req, res) => {
   res.json({ message: 'Successfully unsubscribed' });
 });
 
+// Add this endpoint to check subscribers
+app.get('/api/subscribers', (req, res) => {
+  const subscribers = getSubscribers();
+  res.json({ 
+    count: subscribers.length,
+    subscribers: subscribers 
+  });
+});
+
 // Cron job - runs every day at 9 AM
 cron.schedule('0 9 * * *', () => {
   console.log('Running daily countdown email job...');
