@@ -140,8 +140,8 @@ app.get('/api/subscribers', (req, res) => {
   });
 });
 
-// Cron job - runs every day at 9 AM
-cron.schedule('0 9 * * *', () => {
+// Cron job - runs every day at 9 AM IST (3:30 AM UTC)
+cron.schedule('30 3 * * *', () => {
   console.log('Running daily countdown email job...');
   
   const subscribers = getSubscribers();
@@ -175,5 +175,5 @@ app.post('/api/send-test-email', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
-  console.log('Cron job scheduled to run daily at 9:00 AM');
+  console.log('Cron job scheduled to run daily at 9:00 AM IST (3:30 AM UTC)');
 });
