@@ -22,7 +22,7 @@ export default function CountdownTimer() {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:3001/api/subscribe', { 
+      const response = await fetch('https://countdown-ny-production.up.railway.app/api/subscribe', { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
