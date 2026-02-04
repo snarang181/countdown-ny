@@ -81,7 +81,7 @@ async function sendCountdownEmail(email, daysLeft) {
 
   try {
     await resend.emails.send({
-      from: 'NYC Countdown <onboarding@resend.dev>',
+      from: 'NYC Countdown <countdown@samarthnarang.com>',
       to: email,
       subject: `${daysLeft} ${daysLeft === 1 ? 'day' : 'days'} until NYC! 🗽`,
       html: htmlContent
